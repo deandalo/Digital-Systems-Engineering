@@ -4,18 +4,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module cntr(
-    input logic rst, clk,
+    input logic clk, rst,
     output logic [3:0] count
     );
 
 //internal signals 
             
 always @(posedge clk) 
-    begin
-		if (count < 16)
-			count = count + 1;
-		else
-			count = 0;
-    end
+    if (rst)
+        count = 0;
+    else
+        count = count + 1;
 
 endmodule

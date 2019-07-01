@@ -4,17 +4,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module AmusingLittleCircuit(
-    input logic rst, clk,
-    output logic [1:0] dout
+    input logic clk, rst,
+    output logic [0:1] dout
     );
     
     logic [1:0] spo, din;
     logic we;
     logic [3:0] count, addr;
         
-    cntr cntr1(rst,
-               clk,
-               count);
+    cntr cntr1(.*);
                
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
     dist_mem_gen_1 mem (
