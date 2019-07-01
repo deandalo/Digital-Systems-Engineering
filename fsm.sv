@@ -26,7 +26,7 @@ module fsm(
             loady: state <= comp;
             comp: if (x_eq_y) state <= fine;
             fine : casez ({load, rst})
-                      2'b00    :   state <= state;
+                      2'b00    :   state <= idle;
                       2'b?1    :   state <= idle;
                       2'b10    :   state <= loadx;
                    endcase
